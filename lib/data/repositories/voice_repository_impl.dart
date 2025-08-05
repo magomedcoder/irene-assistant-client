@@ -22,7 +22,7 @@ class VoiceRepositoryImpl implements VoiceRepository {
 
     remote.connect().listen((event) {
       final json = jsonDecode(event);
-      //print("remote-connect-$json");
+      //print("remote-connect-$event");
       final result = VoiceResult(
         text: json['text'] ?? '',
         wavBase64: json['wav_base64'],
@@ -31,7 +31,12 @@ class VoiceRepositoryImpl implements VoiceRepository {
     });
 
     final stream = await _recorder.startStream(
-      RecordConfig(encoder: AudioEncoder.pcm16bits, sampleRate: 48000),
+      RecordConfig(
+        encoder: AudioEncoder.pcm16bits,
+        sampleRate: 48000,
+        numChannels: 1,
+        bitRate: 128000,
+      ),
     );
 
     _streamSub = stream;

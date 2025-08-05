@@ -20,6 +20,7 @@ class App extends StatelessWidget {
     final stopUseCase = StopVoiceStream(repository);
 
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       title: 'Ирина',
       home: HomeScreen(startVoice: startUseCase, stopVoice: stopUseCase),
     );
