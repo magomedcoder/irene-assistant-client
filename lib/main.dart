@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:irene_assistant/data/data_sources/voice_remote_datasource.dart';
 import 'package:irene_assistant/data/repositories/voice_repository_impl.dart';
 import 'package:irene_assistant/domain/usecases/start_voice_stream.dart';
 import 'package:irene_assistant/presentation/screens/home_screen.dart';
@@ -12,7 +13,8 @@ class App extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final repository = VoiceRepositoryImpl();
+    final dataSource = WebSocketVoiceRemoteDataSource();
+    final repository = VoiceRepositoryImpl(dataSource);
     final startUseCase = StartVoiceStream(repository);
     return MaterialApp(
       title: 'Ирина',
