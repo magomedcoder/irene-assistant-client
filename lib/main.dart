@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:irene_assistant/data/data_sources/voice_remote_datasource.dart';
 import 'package:irene_assistant/data/repositories/voice_repository_impl.dart';
 import 'package:irene_assistant/domain/usecases/start_voice_stream.dart';
+import 'package:irene_assistant/domain/usecases/stop_voice_stream.dart';
 import 'package:irene_assistant/presentation/screens/home_screen.dart';
 
 void main() {
@@ -16,9 +17,11 @@ class App extends StatelessWidget {
     final dataSource = WebSocketVoiceRemoteDataSource();
     final repository = VoiceRepositoryImpl(dataSource);
     final startUseCase = StartVoiceStream(repository);
+    final stopUseCase = StopVoiceStream(repository);
+
     return MaterialApp(
       title: 'Ирина',
-      home: HomeScreen(startVoice: startUseCase),
+      home: HomeScreen(startVoice: startUseCase, stopVoice: stopUseCase),
     );
   }
 }

@@ -1,3 +1,4 @@
+import 'package:irene_assistant/domain/entities/voice_result.dart';
 import 'package:irene_assistant/domain/repositories/voice_repository.dart';
 
 class StartVoiceStream {
@@ -5,7 +6,7 @@ class StartVoiceStream {
 
   StartVoiceStream(this.repository);
 
-  Future<void> call() async {
-    await repository.startRecording();
+  Future<void> call(Function(VoiceResult) onResult) async {
+    await repository.startRecording(onResult);
   }
 }
