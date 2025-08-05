@@ -1,0 +1,5 @@
+package ru.magomedcoder.irene_assistant
+
+import io.flutter.embedding.android.FlutterActivity
+
+class MainActivity : FlutterActivity()
