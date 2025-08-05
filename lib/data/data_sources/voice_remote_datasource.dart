@@ -10,12 +10,13 @@ abstract class VoiceRemoteDataSource {
 
 class WebSocketVoiceRemoteDataSource implements VoiceRemoteDataSource {
   late WebSocketChannel _channel;
+  final String address;
 
-  WebSocketVoiceRemoteDataSource();
+  WebSocketVoiceRemoteDataSource(this.address);
 
   @override
   Stream connect() {
-    _channel = WebSocketChannel.connect(Uri.parse("ws://127.0.0.1:5003/wsmic"));
+    _channel = WebSocketChannel.connect(Uri.parse("$address/wsmic"));
     return _channel.stream;
   }
 

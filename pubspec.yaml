@@ -38,6 +38,9 @@ dependencies:
   web_socket_channel: ^3.0.3
   audioplayers: ^6.5.0
   path_provider: ^2.1.5
+  shared_preferences: ^2.5.3
+  flutter_bloc: ^9.1.1
+  url_launcher: ^6.3.2
 
 dev_dependencies:
   flutter_test:
