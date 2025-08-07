@@ -26,10 +26,18 @@
 
 ---
 
+## Скачать приложение
+
+Готовые сборки доступны на странице релизов:
+
+[Открыть релизы на GitHub](https://github.com/magomedcoder/irene-assistant-client/releases)
+
+---
+
 ## Как использовать
 
 1. Установите и запустите сервер Ирины ([https://github.com/janvarev/Irene-Voice-Assistant](https://github.com/janvarev/Irene-Voice-Assistant)).
-2. Убедитесь, что сервер доступен по WebSocket (`/wsmic`).
+2. Убедитесь, что сервер доступен по WebSocket (`runva_webapi.py`).
 3. Укажите адрес сервера в настройках клиента.
 4. Нажмите кнопку микрофона и скажите, например:
    > _Ирина, привет_
@@ -41,8 +49,8 @@
 
 ## Сборка из исходников
 
-**Минимально рекомендуемая версия Flutter: `3.22.1`**  
-(совместима с Dart `3.7.2`)
+**Минимально рекомендуемая версия Flutter: `3.22.0`**  
+(совместима с Dart `3.4.0`)
 
 ```bash
 git clone https://github.com/magomedcoder/irene-assistant-client.git
